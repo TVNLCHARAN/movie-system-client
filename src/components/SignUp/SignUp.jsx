@@ -19,7 +19,7 @@ const SignUp = () => {
     // formData.append('email', email);
 
     try {
-      const response = await axios.post(`http://127.0.0.1:8000/user/add-user?username=${username}&password=${password}&email=${email}`);
+      const response = await axios.post(`https://movie-system-server.onrender.com/user/add-user?username=${username}&password=${password}&email=${email}`);
   
       alert('SignUp successful!');
       console.log(response.data);

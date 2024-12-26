@@ -15,7 +15,7 @@ function Movie() {
         const token = localStorage.getItem('token');
         axios
             .post(
-                'http://127.0.0.1:8000/user/add-watched',
+                'https://movie-system-server.onrender.com/user/add-watched',
                 { show_id: movie.show_id },
                 { headers: { Authorization: `Bearer ${token}` } }
             )
@@ -34,7 +34,7 @@ function Movie() {
 
         axios
             .post(
-                'http://127.0.0.1:8000/user/add-liked',
+                'https://movie-system-server.onrender.com/user/add-liked',
                 { show_id: movie.show_id },
                 { headers: { Authorization: `Bearer ${token}` } }
             )

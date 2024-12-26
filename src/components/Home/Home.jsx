@@ -39,7 +39,7 @@ function Home() {
     }
 
     axios
-      .get('http://127.0.0.1:8000/user/user-profile', {
+      .get('https://movie-system-server.onrender.com/user/user-profile', {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((response) => setUserDetails(response.data))
@@ -47,7 +47,7 @@ function Home() {
 
     axios
       .get(
-        'http://127.0.0.1:8000/user/get-liked',
+        'https://movie-system-server.onrender.com/user/get-liked',
         { headers: { Authorization: `Bearer ${token}` } }
       )
       .then((response) => {
@@ -71,8 +71,8 @@ function Home() {
 
       const url =
         selectedGenre === 'trending'
-          ? 'http://127.0.0.1:8000/user/trending'
-          : `http://127.0.0.1:8000/user/get-genre-${selectedGenre}`;
+          ? 'https://movie-system-server.onrender.com/user/trending'
+          : `https://movie-system-server.onrender.com/user/get-genre-${selectedGenre}`;
 
       try {
         const response = await axios.get(url, {
@@ -84,7 +84,7 @@ function Home() {
       }
 
       axios
-        .get('http://127.0.0.1:8000/services/get-liked-recommendations', {
+        .get('https://movie-system-server.onrender.com/services/get-liked-recommendations', {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((response) => setLiked(response.data))
@@ -164,7 +164,7 @@ function Home() {
 
     axios
       .post(
-        'http://127.0.0.1:8000/user/add-liked',
+        'https://movie-system-server.onrender.com/user/add-liked',
         { show_id: movie.show_id },
         { headers: { Authorization: `Bearer ${token}` } }
       )
